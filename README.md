@@ -1,16 +1,42 @@
-# suma_app
+# 📌 Guía de Configuración, GitHub y Build APK en Flutter
 
-A new Flutter project.
+## ⚙️ 1. Preparar el proyecto Flutter
+Antes de cualquier cosa, asegúrate de tener **Flutter** instalado y configurado en tu entorno.
 
-## Getting Started
+```bash
+# Instalar dependencias del proyecto
+flutter pub get
+```
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 📱 2. Generar APK en modo Release
+Una vez subido el proyecto y comprobado que funciona, puedes generar el APK:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+# Generar el APK optimizado para producción
+flutter build apk --release
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Esto generará el archivo en:
+
+```
+build/app/outputs/flutter-apk/app-release.apk
+```
+
+---
+
+## ✅ 3. Buenas prácticas
+- Siempre ejecuta `flutter pub get` al agregar nuevas dependencias.  
+- Antes de hacer **push**, confirma que compila bien:  
+  ```bash
+  flutter clean
+  flutter pub get
+  flutter run
+  ```
+- Cuando termines una nueva funcionalidad:  
+  ```bash
+  git add .
+  git commit -m "Descripción de cambios"
+  git push
+  ```
