@@ -428,8 +428,8 @@ class _SlotMachinePageState extends State<SlotMachinePage> with TickerProviderSt
 
   Widget _buildRodillo({required Animation<double> animation, required int index, required String finalSymbol}) {
     return Container(
-      width: 80,
-      height: 100,
+      width: 70,
+      height: 90,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           begin: Alignment.topCenter,
@@ -440,10 +440,10 @@ class _SlotMachinePageState extends State<SlotMachinePage> with TickerProviderSt
             Color(0xFF000000),
           ],
         ),
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: const Color(0xFFFFD700),
-          width: 3,
+          width: 2.5,
         ),
         boxShadow: [
           BoxShadow(
@@ -454,7 +454,7 @@ class _SlotMachinePageState extends State<SlotMachinePage> with TickerProviderSt
         ],
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(10),
         child: AnimatedBuilder(
           animation: animation,
           builder: (context, child) {
@@ -463,7 +463,7 @@ class _SlotMachinePageState extends State<SlotMachinePage> with TickerProviderSt
               return Center(
                 child: Text(
                   resultado[index],
-                  style: const TextStyle(fontSize: 48),
+                  style: const TextStyle(fontSize: 42),
                 ),
               );
             }
@@ -476,7 +476,7 @@ class _SlotMachinePageState extends State<SlotMachinePage> with TickerProviderSt
             )..add(finalSymbol);
 
             final progress = animation.value;
-            const itemHeight = 100.0;
+            const itemHeight = 90.0;
             const totalHeight = itemHeight * symbolCount;
             final offset = -(progress * totalHeight - itemHeight);
 
@@ -485,12 +485,12 @@ class _SlotMachinePageState extends State<SlotMachinePage> with TickerProviderSt
               child: Column(
                 children: symbols.map((symbol) {
                   return Container(
-                    width: 80,
+                    width: 70,
                     height: itemHeight,
                     alignment: Alignment.center,
                     child: Text(
                       symbol,
-                      style: const TextStyle(fontSize: 48),
+                      style: const TextStyle(fontSize: 42),
                     ),
                   );
                 }).toList(),
